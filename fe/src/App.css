@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+body {
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar - Elegant Gray */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Global animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes summerFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0);
+  }
+}
+
+@keyframes summerDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -12px, 0) scale(1.08);
+  }
+}
+
+@keyframes summerPulse {
+  0%, 100% {
+    opacity: 0.82;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+/* Card animations */
+.card-item {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Button hover effects */
+button {
+  transition: all 0.3s ease;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* Link hover effects */
+a {
+  transition: all 0.3s ease;
+}
+
+/* Product card hover */
+.product-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #9333ea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Tinh chỉnh hiệu ứng Slide-in của Toastify cho mượt mà hơn */
+.Toastify__slide-enter {
+  animation-duration: 0.6s !important; /* Tăng thời gian chạy một chút để thấy rõ sự mượt mà */
+  animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1) !important; /* Hiệu ứng Ease-out Quint cao cấp */
+}
+
+.Toastify__slide-exit {
+  animation-duration: 0.4s !important;
+  animation-timing-function: cubic-bezier(0.4, 0, 1, 1) !important;
+}

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d3daef",
+                    "primary-container": "#001b54",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-variant": "#dce2f7",
+                    "primary": "#000621",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#490005",
+                    "surface-bright": "#f9f9ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-surface": "#141b2b",
+                    "tertiary-fixed": "#ffdad7",
+                    "secondary-container": "#6cf8bb",
+                    "tertiary": "#1b0001",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container-high": "#e1e8fd",
+                    "surface-container-highest": "#dce2f7",
+                    "secondary-fixed-dim": "#4edea3",
+                    "inverse-primary": "#b4c5ff",
+                    "inverse-surface": "#293040",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#45474c",
+                    "surface-container": "#e9edff",
+                    "surface-container-low": "#f1f3ff",
+                    "on-tertiary-container": "#f44847",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "inverse-on-surface": "#edf0ff",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "on-tertiary-fixed": "#410004",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#930013",
+                    "surface": "#f9f9ff",
+                    "on-background": "#141b2b",
+                    "outline-variant": "#c6c6cc",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary-container": "#5080ff",
+                    "secondary": "#006c49",
+                    "primary-fixed": "#dbe1ff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "background": "#f9f9ff",
+                    "surface-tint": "#0053db",
+                    "outline": "#76777c",
+                    "on-secondary-fixed-variant": "#005236"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col bg-[#001b54] dark:bg-slate-950 docked left-0 h-full w-64 shadow-xl">
+<div class="px-6 py-8">
+<h1 class="text-xl font-bold text-white tracking-tight font-manrope">Phone Store Admin</h1>
+<p class="text-xs text-on-primary-container font-medium opacity-80 mt-1">The Digital Curator</p>
+</div>
+<nav class="flex-1 px-4 space-y-1 overflow-y-auto">
+<a class="text-slate-400 hover:text-white px-4 py-3 transition-colors flex items-center gap-3 font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-400 hover:text-white px-4 py-3 transition-colors flex items-center gap-3 font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                Categories
+            </a>
+<a class="text-slate-400 hover:text-white px-4 py-3 transition-colors flex items-center gap-3 font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                Products
+            </a>
+<a class="text-slate-400 hover:text-white px-4 py-3 transition-colors flex items-center gap-3 font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                Orders
+            </a>
+<!-- Active Navigation State for Employees -->
+<a class="bg-gradient-to-r from-[#000621] to-[#5080ff]/15 text-white font-semibold rounded-r-xl border-l-4 border-blue-400 px-4 py-3 flex items-center gap-3 font-manrope text-sm tracking-tight scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined text-blue-400" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+                Employees
+            </a>
+<a class="text-slate-400 hover:text-white px-4 py-3 transition-colors flex items-center gap-3 font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+                Coupons
+            </a>
+</nav>
+<div class="mt-auto px-6 py-6 border-t border-white/10">
+<button class="w-full mb-6 bg-primary-fixed text-primary-container font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                Create New Order
+            </button>
+<div class="space-y-4">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white text-sm font-medium transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Logout
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<div class="ml-64 min-h-screen flex flex-col">
+<!-- TopNavBar Shell -->
+<header class="sticky top-0 z-30 flex justify-between items-center px-8 py-4 bg-[#f9f9ff] dark:bg-slate-900 font-inter text-sm w-full">
+<div class="flex items-center flex-1 max-w-xl">
+<div class="relative w-full focus-within:ring-2 focus-within:ring-blue-500/20 transition-all rounded-lg overflow-hidden flex items-center bg-surface-container-low px-4">
+<span class="material-symbols-outlined text-slate-400" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 w-full py-2.5 text-on-surface placeholder:text-slate-400" placeholder="Search employees, roles, or departments..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-3">
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 transition-all">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-slate-500 transition-all">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 mx-2"></div>
+<button class="bg-primary-fixed text-primary-container font-semibold px-5 py-2 rounded-xl text-xs hover:opacity-90 transition-all">
+                    Quick Action
+                </button>
+<div class="flex items-center gap-3 ml-2 group cursor-pointer">
+<div class="text-right">
+<p class="font-semibold text-primary leading-none">Admin Console</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-widest mt-0.5">Primary Root</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full object-cover ring-2 ring-surface-container-high" data-alt="Close up portrait of a professional administrator in a minimalist modern office setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoGxRRWT36pAW7CYOUmTeXPsaQYZQHcLJUUFOZKoHQ7VLN3mNV0PuOidmnXU-xViYqBKMrFfCOzpNfVyF9Wn9PTFua9tiVXVkhvnDx1xNzj6DeElIc7WA-t6uWNSdhZVKzeC1x5H2cIRPn2LbsbZjFMtvzNe8_VRo2Z8Im-QRJP9-DlPTFDMYdpiZYN1osas3olEtNayAv1mFegWBhC76vnEOqcEVnRqZiee2gxIN5ZLZmiBSda2nflV1MOQIRtLV0Gk-lMI7MXtg"/>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 p-8 overflow-y-auto">
+<div class="mb-8 flex justify-between items-end">
+<div>
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Staff Management</h2>
+<p class="text-on-surface-variant mt-1 font-body text-sm">Control personnel access and department hierarchies across the ecosystem.</p>
+</div>
+<div class="flex bg-surface-container p-1 rounded-full">
+<button class="px-6 py-2 rounded-full bg-surface-container-lowest shadow-sm text-sm font-semibold text-primary">Employees</button>
+<button class="px-6 py-2 rounded-full text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Role Permissions</button>
+</div>
+</div>
+<div class="grid grid-cols-12 gap-8">
+<!-- Main Section: Employee List -->
+<section class="col-span-8 flex flex-col gap-6">
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden ring-1 ring-outline-variant/10">
+<div class="bg-surface-container-low px-8 py-5 flex justify-between items-center">
+<h3 class="font-manrope font-semibold text-primary tracking-tight">Personnel Directory</h3>
+<div class="flex gap-4">
+<button class="text-xs font-semibold text-on-surface-variant flex items-center gap-1 hover:text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+                                    Department
+                                </button>
+<button class="text-xs font-semibold text-on-surface-variant flex items-center gap-1 hover:text-primary">
+<span class="material-symbols-outlined text-sm" data-icon="sort">sort</span>
+                                    Status
+                                </button>
+</div>
+</div>
+<div class="divide-y divide-surface-container-low">
+<!-- Employee Row -->
+<div class="px-8 py-5 flex items-center justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-4">
+<img alt="Store Administrator Profile" class="w-12 h-12 rounded-full object-cover" data-alt="Professional woman in business casual attire with a warm, confident expression in a bright corporate workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFcYHeQhjtEtVA4eKW4b5UleHgQpw6EvTGnBD1xP5jnmTSMxPD-AoMhgGseK1wxaOTHrHLs6BjUeA6EX1VBgFKpj7_vtfFBzgUIUT1OcfiqTi1YqO3DSsefjEJbWN5Cg3F7UbLILuiYoduQ03FT8UZamxeodg7YHJ2Qzvofvp22jtGbxB4gui9Un16bHSUOF5FGXa02F4YY6yIJsEAaU1NQtfp4gzL29ff5FiPi32-kzRpl4HT5KBoBIexnaqYUVg6kHcx3bKu6zE"/>
+<div>
+<h4 class="font-semibold text-on-surface">Sarah Mitchell</h4>
+<p class="text-xs text-on-surface-variant">s.mitchell@phonestore.com</p>
+</div>
+</div>
+<div class="w-32">
+<span class="text-xs font-medium text-on-surface-variant block mb-1">Department</span>
+<span class="text-sm font-semibold text-primary">Retail Sales</span>
+</div>
+<div class="w-32">
+<span class="text-xs font-medium text-on-surface-variant block mb-1">Assigned Role</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-semibold text-primary">Store Manager</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Employee Row -->
+<div class="px-8 py-5 flex items-center justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-4">
+<img alt="Employee Profile" class="w-12 h-12 rounded-full object-cover" data-alt="A focused man in a clean office setting wearing a dress shirt, looking directly at the camera with a friendly gaze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAT838zvxO_sYrB-qW4AWWa6tp3BSF-WcWlfTxcQTOGL5AJ5JxjJMapeIwxRvSXJmm8_ykjBQ-bjZH3Avs61hR9_vG6OU9Un-zAYWt5eqGPsxWn_k9glVdHU55rq0eVc8XFr460W1AntlD6Iwxqu9hpm8NRaROX2s4gTTNDkJhUXpW9HDMri3sS0uioeXxumxqdeyKzHsVgO2oyH9wrCmMlrtKak_mhBYqblcv5B--5t9AfbvO2joepmj9djZh2DvA8HCSvlihES9g"/>
+<div>
+<h4 class="font-semibold text-on-surface">David Chen</h4>
+<p class="text-xs text-on-surface-variant">d.chen@phonestore.com</p>
+</div>
+</div>
+<div class="w-32">
+<span class="text-xs font-medium text-on-surface-variant block mb-1">Department</span>
+<span class="text-sm font-semibold text-primary">Inventory Ops</span>
+</div>
+<div class="w-32">
+<span class="text-xs font-medium text-on-surface-variant block mb-1">Assigned Role</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-blue-500"></span>
+<span class="text-sm font-semibold text-primary">Logistics Head</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Employee Row -->
+<div class="px-8 py-5 flex items-center justify-between hover:bg-surface-container-high transition-colors group">
+<div class="flex items-center gap-4">
+<img alt="Employee Profile" class="w-12 h-12 rounded-full object-cover" data-alt="Young professional woman smiling with a bright background, expressing intelligence and approachability in a creative studio environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXnaltGiKQUpcIkxQH2BB8x__Eu3rJatXjXqoc8SVzhqFmkgwjj6xEcMaKBzapgDbvTQdHqwW6wesv4LizGdENnPz3nTOtfHWmcQF450mJcWPMhZe-Bvj0yZWGzgaM1GOTja7MPecaiQvvHaGnOOoAdl2ex8TeTu8zrWd6Praw565W0I_Oo6kEg9_TPTonZM7Kr4_9ZNF44H6j_VMoPVxSIATEskRCdPpiD4zjmDrxnj-e1hznoUXedRlDEiA2-w_jF0gG1qEkSEo"/>
+<div>
+<h4 class="font-semibold text-on-surface">Elena Rodriguez</h4>
+<p class="text-xs text-on-surface-variant">e.rodriguez@phonestore.com</p>
+</div>
+</div>
+<div class="w-32">
+<span class="text-xs font-medium text-on-surface-variant block mb-1">Department</span>
+<span class="text-sm font-semibold text-primary">HR &amp; Talent</span>
+</div>
+<div class="w-32">
+<span class="text-xs font-medium text-on-surface-variant block mb-1">Assigned Role</span>
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-purple-500"></span>
+<span class="text-sm font-semibold text-primary">HR Admin</span>
+</div>
+</div>
+<div class="flex gap-2">
+<button class="p-2 text-on-surface-variant hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete_outline">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Stat Cards -->
+<div class="grid grid-cols-2 gap-6">
+<div class="bg-secondary-container p-6 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-on-secondary-container text-xs font-bold uppercase tracking-widest opacity-80">Total Staff</p>
+<h3 class="font-headline text-3xl font-bold text-on-secondary-container">124</h3>
+</div>
+<div class="p-3 bg-on-secondary-container/10 rounded-full">
+<span class="material-symbols-outlined text-on-secondary-container text-3xl" data-icon="badge">badge</span>
+</div>
+</div>
+<div class="bg-surface-container p-6 rounded-xl flex items-center justify-between">
+<div>
+<p class="text-on-surface-variant text-xs font-bold uppercase tracking-widest">Open Roles</p>
+<h3 class="font-headline text-3xl font-bold text-primary">08</h3>
+</div>
+<div class="p-3 bg-primary-container/5 rounded-full">
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="work_outline">work_outline</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Secondary Section: Role Permissions -->
+<section class="col-span-4 space-y-6">
+<div class="bg-white rounded-xl shadow-xl p-8 ring-1 ring-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-headline text-xl font-bold text-primary">Role Editor</h3>
+<button class="text-blue-600 font-bold text-xs uppercase tracking-tight">Create Role</button>
+</div>
+<div class="space-y-8">
+<div>
+<label class="label-sm font-bold text-on-surface-variant uppercase tracking-widest text-[10px] block mb-4">Select Role to Modify</label>
+<div class="relative group">
+<button class="w-full flex items-center justify-between p-4 bg-surface-container-low rounded-xl border-b-2 border-outline-variant focus:border-surface-tint outline-none transition-all">
+<div class="flex items-center gap-3">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span class="font-semibold text-primary">Store Manager</span>
+</div>
+<span class="material-symbols-outlined" data-icon="expand_more">expand_more</span>
+</button>
+</div>
+</div>
+<div class="space-y-4">
+<label class="label-sm font-bold text-on-surface-variant uppercase tracking-widest text-[10px] block mb-2">Module Access Levels</label>
+<!-- Permission Entry -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container/30 hover:bg-surface-container/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500" data-icon="inventory">inventory</span>
+<span class="text-sm font-semibold text-on-surface">Inventory Management</span>
+</div>
+<div class="flex items-center gap-2">
+<select class="bg-transparent border-none text-xs font-bold text-secondary focus:ring-0 cursor-pointer">
+<option>Full Access</option>
+<option>View Only</option>
+<option>No Access</option>
+</select>
+</div>
+</div>
+<!-- Permission Entry -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container/30 hover:bg-surface-container/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500" data-icon="payments">payments</span>
+<span class="text-sm font-semibold text-on-surface">Sales &amp; Analytics</span>
+</div>
+<div class="flex items-center gap-2">
+<select class="bg-transparent border-none text-xs font-bold text-secondary focus:ring-0 cursor-pointer">
+<option>Full Access</option>
+<option>View Only</option>
+<option>No Access</option>
+</select>
+</div>
+</div>
+<!-- Permission Entry -->
+<div class="flex items-center justify-between p-4 rounded-xl bg-surface-container/30 hover:bg-surface-container/50 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-slate-500" data-icon="people_alt">people_alt</span>
+<span class="text-sm font-semibold text-on-surface">HR &amp; User Controls</span>
+</div>
+<div class="flex items-center gap-2">
+<select class="bg-transparent border-none text-xs font-bold text-on-tertiary-container focus:ring-0 cursor-pointer">
+<option>No Access</option>
+<option>View Only</option>
+<option>Full Access</option>
+</select>
+</div>
+</div>
+</div>
+<div class="pt-4 flex flex-col gap-3">
+<button class="w-full py-4 bg-primary-container text-primary-fixed font-bold rounded-xl shadow-lg hover:opacity-95 transition-all">
+                                    Save Role Changes
+                                </button>
+<button class="w-full py-3 bg-transparent text-on-surface-variant text-xs font-bold hover:text-primary transition-colors">
+                                    Reset to Defaults
+                                </button>
+</div>
+</div>
+</div>
+<!-- Security Insights Glass Card -->
+<div class="relative overflow-hidden rounded-xl bg-gradient-to-br from-primary-container to-blue-900 p-6 shadow-2xl">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h4 class="text-white font-headline text-lg mb-2 relative z-10">Security Audit</h4>
+<p class="text-on-primary-container text-xs leading-relaxed relative z-10 mb-4">3 roles have unverified access to financial modules. We recommend a quarterly review.</p>
+<button class="relative z-10 px-4 py-2 bg-white/10 backdrop-blur-md rounded-lg text-white text-[10px] font-bold uppercase tracking-wider hover:bg-white/20 transition-all">
+                            View Audit Log
+                        </button>
+</div>
+</section>
+</div>
+</main>
+</div>
+</body></html>

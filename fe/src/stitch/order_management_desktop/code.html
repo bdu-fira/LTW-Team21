@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Management | Phone Store Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d3daef",
+                    "primary-container": "#001b54",
+                    "on-primary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-variant": "#dce2f7",
+                    "primary": "#000621",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-container": "#490005",
+                    "surface-bright": "#f9f9ff",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-surface": "#141b2b",
+                    "tertiary-fixed": "#ffdad7",
+                    "secondary-container": "#6cf8bb",
+                    "tertiary": "#1b0001",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-container-high": "#e1e8fd",
+                    "surface-container-highest": "#dce2f7",
+                    "secondary-fixed-dim": "#4edea3",
+                    "inverse-primary": "#b4c5ff",
+                    "inverse-surface": "#293040",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#45474c",
+                    "surface-container": "#e9edff",
+                    "surface-container-low": "#f1f3ff",
+                    "on-tertiary-container": "#f44847",
+                    "on-secondary": "#ffffff",
+                    "on-primary-fixed": "#00174b",
+                    "inverse-on-surface": "#edf0ff",
+                    "tertiary-fixed-dim": "#ffb3ad",
+                    "on-tertiary-fixed": "#410004",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#930013",
+                    "surface": "#f9f9ff",
+                    "on-background": "#141b2b",
+                    "outline-variant": "#c6c6cc",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary-container": "#5080ff",
+                    "secondary": "#006c49",
+                    "primary-fixed": "#dbe1ff",
+                    "error": "#ba1a1a",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#00714d",
+                    "background": "#f9f9ff",
+                    "surface-tint": "#0053db",
+                    "outline": "#76777c",
+                    "on-secondary-fixed-variant": "#005236"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Manrope"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, .font-manrope { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full z-40 flex flex-col bg-[#001b54] dark:bg-slate-950 docked left-0 h-full w-64 shadow-xl">
+<div class="p-6 flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-container">smartphone</span>
+</div>
+<div>
+<h2 class="text-xl font-bold text-white tracking-tight">Phone Store Admin</h2>
+<p class="text-[10px] uppercase tracking-widest text-on-primary-container font-semibold">The Digital Curator</p>
+</div>
+</div>
+<nav class="mt-4 flex-grow px-3 space-y-1">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 transition-colors font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 transition-colors font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="category">category</span>
+                Categories
+            </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 transition-colors font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+                Products
+            </a>
+<a class="flex items-center gap-3 bg-gradient-to-r from-[#000621] to-[#5080ff]/15 text-white font-semibold rounded-r-xl border-l-4 border-blue-400 px-4 py-3 font-manrope text-sm tracking-tight scale-95 active:opacity-80 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+                Orders
+            </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 transition-colors font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                Employees
+            </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-3 transition-colors font-manrope text-sm font-medium tracking-tight hover:bg-white/5 transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="local_offer">local_offer</span>
+                Coupons
+            </a>
+</nav>
+<div class="p-4 border-t border-white/10">
+<button class="w-full bg-primary-fixed text-on-primary-fixed py-3 rounded-xl font-bold flex items-center justify-center gap-2 mb-6 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">add_circle</span>
+                Create New Order
+            </button>
+<div class="space-y-1">
+<a class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-2 transition-colors font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 text-slate-400 hover:text-white px-4 py-2 transition-colors font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                    Logout
+                </a>
+</div>
+</div>
+</aside>
+<!-- TopNavBar -->
+<header class="sticky top-0 ml-64 z-30 flex justify-between items-center px-8 py-4 w-[calc(100%-16rem)] bg-[#f9f9ff] dark:bg-slate-900 font-inter text-sm">
+<div class="flex items-center gap-4 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container-lowest border-none rounded-xl focus:ring-2 focus:ring-surface-tint/20 transition-all text-on-surface" placeholder="Search Order IDs or Customers..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-4 text-slate-500">
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-3">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Admin Console</p>
+<p class="text-[10px] text-on-surface-variant">Store Administrator</p>
+</div>
+<img alt="Administrator Profile" class="w-10 h-10 rounded-full object-cover border-2 border-primary-fixed" data-alt="Close up portrait of a professional male store administrator with a friendly expression and clean grooming" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2MsouwiJVXWYi3nq1Uz9pkR_wc5WMJ4TaM_qtJ0-Raal7m6nJRSNoVZrp3TL5DDSJRA-6Io-X4HUBpPigTXZ0gjwC2tiNyYDYKln5N09OGp0P8t3Ic3srgdUWafLoj7M-tB8GcjyxeCaPsXyO3znrG3TIxZrmbLuoENa1eOiHOxS5XBBWktxGWdlxa1s5BwYadHCQ39F6cKNnnhaHvcaAsAhJRtsFWsKzfKNo2J_ZvVp2XDYWnZiGZMs7Zcf8xL5wtvzqdRI6Fm0"/>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 min-h-screen">
+<!-- Header & Tabs -->
+<div class="mb-8 flex flex-col gap-6">
+<div class="flex justify-between items-end">
+<div>
+<h1 class="text-3xl font-bold text-on-surface tracking-tight font-manrope">Order Management</h1>
+<p class="text-on-surface-variant font-medium mt-1">Review and fulfill your store's recent customer activity.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2.5 bg-surface-container-lowest text-on-surface font-semibold rounded-xl border border-outline-variant/30 hover:bg-surface-container-low transition-all">
+<span class="material-symbols-outlined text-[20px]">download</span>
+                        Export CSV
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2.5 bg-primary-container text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                        New Order
+                    </button>
+</div>
+</div>
+<!-- Custom Tabs -->
+<div class="flex gap-8 border-b border-outline-variant/20">
+<button class="pb-4 text-sm font-bold text-primary-container border-b-2 border-primary-container">All Orders <span class="ml-2 text-[10px] bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full">128</span></button>
+<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Pending <span class="ml-2 text-[10px] bg-surface-container-high px-2 py-0.5 rounded-full">14</span></button>
+<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Processing</button>
+<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Shipped</button>
+<button class="pb-4 text-sm font-medium text-on-surface-variant hover:text-on-surface transition-colors">Cancelled</button>
+</div>
+</div>
+<!-- Orders Table Section -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="grid grid-cols-12 bg-surface-container-low px-6 py-4">
+<div class="col-span-2 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Order ID</div>
+<div class="col-span-2 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Date</div>
+<div class="col-span-3 text-xs font-bold text-on-surface-variant uppercase tracking-wider">Customer</div>
+<div class="col-span-1.5 text-xs font-bold text-on-surface-variant uppercase tracking-wider text-center">Payment</div>
+<div class="col-span-1.5 text-xs font-bold text-on-surface-variant uppercase tracking-wider text-center">Fulfillment</div>
+<div class="col-span-1 text-xs font-bold text-on-surface-variant uppercase tracking-wider text-right">Total</div>
+<div class="col-span-1"></div>
+</div>
+<div class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<div class="grid grid-cols-12 px-6 py-5 items-center hover:bg-surface-container-high transition-colors group">
+<div class="col-span-2 flex items-center gap-3">
+<span class="font-bold text-on-surface text-sm">#ORD-9921</span>
+<span class="material-symbols-outlined text-[16px] text-outline opacity-0 group-hover:opacity-100 cursor-pointer">content_copy</span>
+</div>
+<div class="col-span-2 text-sm text-on-surface-variant">Oct 24, 2023 <span class="block text-[10px] opacity-60">14:22 PM</span></div>
+<div class="col-span-3 flex items-center gap-3">
+<img alt="Customer Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="Headshot of a smiling young woman with dark hair in a professional portrait setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt2y-f9SbSg_P_H9cvbOk082Jf1CGYLloJp6qBX1gtCRhZKKJS3UxQ_3By4AZgqRk3k3-oqBYui4of1Xk4DrgXSins1Fw63glcI46dsjXSpcz_67v-0EqDP_vNXEF_57cMlXEo5GAxQMXTB-LNmPyBnSL8K06VyiRjEBHwpS73re923R2OAmnVpvta0h8Dd1Wjosf_vXsUIg76Wn10OvRdgU1MHLNgYH5aJLRXd2oNq42mzhM2IonDpvhNjvfraLFR341tK6MX_IA"/>
+<div>
+<p class="text-sm font-semibold text-on-surface">Eleanor Pena</p>
+<p class="text-[11px] text-on-surface-variant">eleanor.p@gmail.com</p>
+</div>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full">PAID</span>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-surface-container-high text-on-surface-variant text-[11px] font-bold rounded-full">SHIPPED</span>
+</div>
+<div class="col-span-1 text-right text-sm font-bold text-on-surface">$1,299.00</div>
+<div class="col-span-1 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-12 px-6 py-5 items-center hover:bg-surface-container-high transition-colors group">
+<div class="col-span-2 flex items-center gap-3">
+<span class="font-bold text-on-surface text-sm">#ORD-9918</span>
+<span class="material-symbols-outlined text-[16px] text-outline opacity-0 group-hover:opacity-100 cursor-pointer">content_copy</span>
+</div>
+<div class="col-span-2 text-sm text-on-surface-variant">Oct 24, 2023 <span class="block text-[10px] opacity-60">11:05 AM</span></div>
+<div class="col-span-3 flex items-center gap-3">
+<img alt="Customer Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of a young man with a slight beard wearing a casual blue shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDp_Q3-feJ7irQx1DLuzmbRHLAUA7gzenMhOHeBwI_IwvFKN4hHOduw35h4pO50nX9byPljGJZhq4FybIFNgiP2MksB7BAFa_EEl6fJCqsitSIJsZeaB_Ci_AqYIjzwV-vZx4AYXmUSP2CJIvgUC5LGNJ6rB1k7ksIukGcmwfHKxgG2yBgHrQax47pfWOxXDhgDFVz7nig3D6fFFF_JeVBnt8ukRyA04Gz63w3l29egZMhQTQBlqqHVGkoPByjXqxZdE-lDiN6hYwE"/>
+<div>
+<p class="text-sm font-semibold text-on-surface">Arlene McCoy</p>
+<p class="text-[11px] text-on-surface-variant">arlene.mccoy@outlook.com</p>
+</div>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-surface-container-high text-on-surface-variant text-[11px] font-bold rounded-full">UNPAID</span>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[11px] font-bold rounded-full">PENDING</span>
+</div>
+<div class="col-span-1 text-right text-sm font-bold text-on-surface">$849.00</div>
+<div class="col-span-1 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-12 px-6 py-5 items-center hover:bg-surface-container-high transition-colors group">
+<div class="col-span-2 flex items-center gap-3">
+<span class="font-bold text-on-surface text-sm">#ORD-9915</span>
+<span class="material-symbols-outlined text-[16px] text-outline opacity-0 group-hover:opacity-100 cursor-pointer">content_copy</span>
+</div>
+<div class="col-span-2 text-sm text-on-surface-variant">Oct 23, 2023 <span class="block text-[10px] opacity-60">09:44 AM</span></div>
+<div class="col-span-3 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-on-primary-fixed">JD</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Jane Doe</p>
+<p class="text-[11px] text-on-surface-variant">jane.doe@company.io</p>
+</div>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-secondary-container text-on-secondary-container text-[11px] font-bold rounded-full">PAID</span>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-primary-fixed text-on-primary-fixed-variant text-[11px] font-bold rounded-full">PROCESSING</span>
+</div>
+<div class="col-span-1 text-right text-sm font-bold text-on-surface">$2,410.50</div>
+<div class="col-span-1 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Row 4 -->
+<div class="grid grid-cols-12 px-6 py-5 items-center hover:bg-surface-container-high transition-colors group">
+<div class="col-span-2 flex items-center gap-3">
+<span class="font-bold text-on-surface text-sm">#ORD-9912</span>
+<span class="material-symbols-outlined text-[16px] text-outline opacity-0 group-hover:opacity-100 cursor-pointer">content_copy</span>
+</div>
+<div class="col-span-2 text-sm text-on-surface-variant">Oct 23, 2023 <span class="block text-[10px] opacity-60">08:12 AM</span></div>
+<div class="col-span-3 flex items-center gap-3">
+<img alt="Customer Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="Close up of a middle-aged man with short hair and a neutral expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARLwTSXjSnSXuXyqEulT7CDHH3tmfaLioCfgTMQa41OeHfyw63CrCRpGj5_cvh7HDQmmasHy9qCSGCfKkf-1ng6khR6hLwf7jcU6iBZXgqZbUOhQyiAnUPWkn28aUBVtJvOCGgNqnTKJdP8Jo7w2zw9BoTcVF9RuhGbUiyf4W7COOPrC4w5FZTt6ti80bxkS6978lHBdpTybnvlF5COGZmFkFknyRvt5hn3ZKnm26EBopWL1WRqY2b2-5YiICBjo7Yr_ZpU7QkIMI"/>
+<div>
+<p class="text-sm font-semibold text-on-surface">Robert Fox</p>
+<p class="text-[11px] text-on-surface-variant">robert.fox@gmail.com</p>
+</div>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-error-container text-on-error-container text-[11px] font-bold rounded-full">REFUNDED</span>
+</div>
+<div class="col-span-1.5 flex justify-center">
+<span class="px-2.5 py-1 bg-outline-variant/30 text-on-surface-variant text-[11px] font-bold rounded-full">CANCELLED</span>
+</div>
+<div class="col-span-1 text-right text-sm font-bold text-on-surface">$159.00</div>
+<div class="col-span-1 text-right">
+<button class="p-2 text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 bg-surface-container-lowest border-t border-outline-variant/10 flex items-center justify-between">
+<p class="text-xs text-on-surface-variant font-medium">Showing <span class="text-on-surface">1-4</span> of <span class="text-on-surface">128</span> orders</p>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg bg-primary-fixed text-on-primary-fixed font-bold text-xs">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs font-semibold transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs font-semibold transition-colors">3</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Featured Analysis (Bento Element) -->
+<div class="mt-8 grid grid-cols-3 gap-6">
+<div class="bg-primary-container p-6 rounded-2xl text-white flex flex-col justify-between relative overflow-hidden group">
+<div class="relative z-10">
+<p class="text-on-primary-container font-bold text-xs uppercase tracking-widest">Average Daily Volume</p>
+<h3 class="text-3xl font-bold mt-2 font-manrope">42 Orders</h3>
+</div>
+<div class="mt-8 flex items-center gap-2 text-secondary-fixed relative z-10">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="text-sm font-bold">+12% vs last week</span>
+</div>
+<!-- Decoration -->
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-white/5 rounded-full scale-150 transition-transform group-hover:scale-[2] duration-700"></div>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-secondary-container rounded-xl">
+<span class="material-symbols-outlined text-on-secondary-container">local_shipping</span>
+</div>
+<span class="text-[10px] text-on-surface-variant font-bold">READY TO SHIP</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface font-manrope">18 Items</h3>
+<p class="text-xs text-on-surface-variant mt-1 font-medium">Awaiting courier pickup for today</p>
+<button class="mt-4 w-full py-2 bg-surface-container text-on-surface font-bold text-xs rounded-lg hover:bg-surface-container-high transition-colors">Schedule Pickup</button>
+</div>
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-tertiary-fixed rounded-xl">
+<span class="material-symbols-outlined text-on-tertiary-fixed">priority_high</span>
+</div>
+<span class="text-[10px] text-error font-bold">URGENT</span>
+</div>
+<h3 class="text-2xl font-bold text-on-surface font-manrope">5 Returns</h3>
+<p class="text-xs text-on-surface-variant mt-1 font-medium">Require manual review and approval</p>
+<button class="mt-4 w-full py-2 bg-surface-container text-on-surface font-bold text-xs rounded-lg hover:bg-surface-container-high transition-colors">Open Returns Desk</button>
+</div>
+</div>
+</main>
+</body></html>
