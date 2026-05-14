@@ -1,0 +1,6 @@
+Phần mềm được sử dụng:
+- Docker
+- Tableplus database: shopdb là database chính
+- Visual:
++ BE: lệnh kích hoạt kết nối: node .\src\app.js
++ FE: lệnh kích hoạt mở trang web: npm start
